@@ -14,18 +14,30 @@
 
 get_header(); ?>
 
-<div id="primary" class="content-area">
+<div id="primary" class="container">
 	<main id="main" class="site-main" role="main">
 
+    <?php
+    	$mypages = get_pages( array( 'child_of' => $post->ID ) );
 
-    <?php // Show the selected frontpage content.
-    if ( have_posts() ) :
-      while ( have_posts() ) : the_post();
-        get_template_part( 'template-parts/panels/content', 'front' );
-      endwhile;
-    else : // I'm not sure it's possible to have no posts when this page is shown, but WTH.
-      get_template_part( 'template-parts/post/content', 'none' );
-    endif; ?>
+    	foreach( $mypages as $page ) {
+    		$content = $page->post_content;
+    		if ( ! $content ) // Check for empty page
+    			continue;
+    		$content = apply_filters( 'the_content', $content );
+    	?>
+    		<h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
+        <div class="row">
+        <div class="col-sm-6">
+          <?php echo get_the_post_thumbnail( $page->ID, 'medium_large', ['class' => 'img-responsive']); ?>
+        </div>
+        <div class="col-sm-6">
+          <?php echo $content; ?>
+        </div>
+      </div>
+    	<?php
+    	}
+    ?>
 
 
 	</main><!-- #main -->
