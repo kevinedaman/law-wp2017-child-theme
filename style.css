@@ -8,4 +8,31 @@ template: twentyseventeen
 Vaersion: 0.1.0
 */
 
-@import url("../twentyseventeen/style.css")
+/*
+* Contents:
+* 1.0 General
+* 2.0 About
+*
+*/
+
+@import url("../twentyseventeen/style.css");
+
+.site-content {
+	padding: 0;
+}
+
+/*
+* 2.0 About
+*/
+
+.about-content {
+
+}
+
+.about-header {
+  
+}
+
+.about-image {
+
+}
