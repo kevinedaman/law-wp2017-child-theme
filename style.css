@@ -12,7 +12,7 @@ Vaersion: 0.1.0
 * Contents:
 * 1.0 General
 * 2.0 About
-*
+* 3.0 Front
 */
 
 @import url("../twentyseventeen/style.css");
@@ -20,6 +20,11 @@ Vaersion: 0.1.0
 h1 {
 	font-size: 4em;
 	margin: 0.67em 0;
+}
+
+h2 {
+  font-size: 3em;
+  font-weight: bold;
 }
 
 .site-content {
@@ -39,4 +44,23 @@ font-size: 16px;
 
 .about-image {
 
+}
+
+/*
+* 3.0 Front
+*/
+.front-about-image {
+  border-radius: 50%;
+}
+
+.front-about-text p {
+  font-size: 16px;
+}
+
+.front-wrapper {
+  padding: 10px;
+}
+
+.panel-header {
+  text-align: right;
 }

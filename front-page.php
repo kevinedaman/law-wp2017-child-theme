@@ -15,7 +15,7 @@
 get_header(); ?>
 
 <div id="primary" class="container">
-	<main id="main" class="site-main" role="main">
+	<main id="main" class="front-wrapper" role="main">
 
     <?php
     	$mypages = get_pages( array( 'child_of' => $post->ID ) );
@@ -26,12 +26,14 @@ get_header(); ?>
     			continue;
     		$content = apply_filters( 'the_content', $content );
     	?>
-    		<h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
-        <div class="row">
+      <div class="panel-header">
+        <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
+      </div>
+        <div class="row align-items-center">
         <div class="col-sm-6">
-          <?php echo get_the_post_thumbnail( $page->ID, 'medium_large', ['class' => 'img-responsive']); ?>
+          <?php echo get_the_post_thumbnail( $page->ID, 'full', ['class' => 'img-responsive front-about-image']); ?>
         </div>
-        <div class="col-sm-6">
+        <div class="col-sm-6 front-about-text">
           <?php echo $content; ?>
         </div>
       </div>
