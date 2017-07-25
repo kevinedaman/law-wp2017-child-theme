@@ -17,20 +17,24 @@ Vaersion: 0.1.0
 
 @import url("../twentyseventeen/style.css");
 
+h1 {
+	font-size: 4em;
+	margin: 0.67em 0;
+}
+
 .site-content {
-	padding: 0;
+	padding: 20px;
 }
 
 /*
 * 2.0 About
 */
-
-.about-content {
-
+.about-content p {
+font-size: 16px;
 }
 
 .about-header {
-  
+
 }
 
 .about-image {
