@@ -39,5 +39,5 @@
 		<?php endif; ?>
 	</header><!-- #masthead -->
 
-	<div class="site-content-contain">
+	<div class="container-fluid">
 		<div id="content" class="site-content">

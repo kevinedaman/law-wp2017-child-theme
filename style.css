@@ -57,6 +57,18 @@ font-size: 16px;
   font-size: 16px;
 }
 
+.front-panel-dark {
+  background-color: darkgrey;
+  margin: 0;
+  padding: 20px;
+}
+
+.front-panel-white {
+  background-color: white;
+  margin: 0;
+  padding: 20px;
+}
+
 .front-wrapper {
   padding: 10px;
 }

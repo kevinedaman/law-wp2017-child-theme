@@ -14,9 +14,8 @@
 
 get_header(); ?>
 
-<div id="primary" class="container">
-	<main id="main" class="front-wrapper" role="main">
-
+<div id="primary">
+  <div class="front-panel-white">
     <?php
     	$mypages = get_pages( array( 'child_of' => $post->ID ) );
 
@@ -40,9 +39,38 @@ get_header(); ?>
     	<?php
     	}
     ?>
+  </div>
+<div class="front-panel-dark">
+<div class="row">
+  <h2><a href="<?php echo get_page_link( 'Merch' ); ?>">Merchandise</a></h2>
+</div>
+  <?php
+    $myposts = get_posts( array( 'post_type' => 'product') );
+    $num = 0;
+    foreach( $myposts as $post ) {
+      if ($num == 0) {
+  ?>
+        <div class="row">'
+  <?php
+      }
+  ?>
+        <div class="col-sm-4">
+  <?php
+      the_post_thumbnail( 'thumbnail' );
+      $num ++;
+  ?>
+        </div>
+  <?php
+      if ($num == 3) {
+  ?>
+        </div>
+  <?php
+      $num = 0;
+    }
+  }
+  ?>
+</div><!-- end front-panel -->
 
-
-	</main><!-- #main -->
 </div><!-- #primary -->
 
 <?php get_footer();
