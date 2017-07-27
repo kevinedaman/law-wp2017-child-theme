@@ -14,7 +14,7 @@
 
 get_header(); ?>
 
-<div id="primary">
+<div id="primary" class="container">
   <div class="front-panel-white">
     <?php
     	$mypages = get_pages( array( 'child_of' => $post->ID ) );
@@ -40,10 +40,10 @@ get_header(); ?>
     	}
     ?>
   </div>
-<div class="front-panel-dark">
 <div class="row">
-  <h2><a href="<?php echo get_page_link( 'Merch' ); ?>">Merchandise</a></h2>
+  <h2>Merchandise</a></h2>
 </div>
+<div class="row">
   <?php
     $myposts = get_posts( array( 'post_type' => 'product') );
     $num = 0;
@@ -69,8 +69,7 @@ get_header(); ?>
     }
   }
   ?>
+</div>
 </div><!-- end front-panel -->
-
-</div><!-- #primary -->
 
 <?php get_footer();
