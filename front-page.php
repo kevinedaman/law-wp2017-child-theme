@@ -29,10 +29,10 @@ get_header(); ?>
         <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
       </div>
         <div class="row align-items-center">
-        <div class="col-sm-6">
+        <div class="col-md-6">
           <?php echo get_the_post_thumbnail( $page->ID, 'full', ['class' => 'img-responsive front-about-image']); ?>
         </div>
-        <div class="col-sm-6 front-about-text">
+        <div class="col-md-6 front-about-text">
           <?php echo $content; ?>
         </div>
       </div>
@@ -41,35 +41,24 @@ get_header(); ?>
     ?>
   </div>
 <div class="row">
-  <h2>Merchandise</a></h2>
+  <h2><a href="<?php echo get_site_url(); ?>/shop">Merchandise</a></h2>
 </div>
 <div class="row">
   <?php
     $myposts = get_posts( array( 'post_type' => 'product') );
-    $num = 0;
     foreach( $myposts as $post ) {
-      if ($num == 0) {
-  ?>
-        <div class="row">'
-  <?php
-      }
-  ?>
-        <div class="col-sm-4">
-  <?php
-      the_post_thumbnail( 'thumbnail' );
-      $num ++;
-  ?>
+    ?>
+        <div class="col-md-4">
+  <a href="
+    <?php
+      echo get_permalink( $post->ID );?>"><?php
+      the_post_thumbnail( 'small', ['class' => 'front-merch-image'] );
+  ?></a>
         </div>
   <?php
-      if ($num == 3) {
-  ?>
-        </div>
-  <?php
-      $num = 0;
-    }
   }
   ?>
-</div>
 </div><!-- end front-panel -->
+</div>
 
 <?php get_footer();

@@ -15,10 +15,14 @@ Vaersion: 0.1.0
 * 3.0 Front
 */
 
-body {
-  padding: 0;
+h2 {
+  color: black;
 }
 
+img {
+  max-height: 100%;
+  max-width: 100%;
+}
 .content {
   margin: 0;
   width: 100%;
@@ -68,19 +72,10 @@ font-size: 16px;
   font-size: 16px;
 }
 
-.front-panel-dark {
-  background-color: darkgrey;
-  margin: 0;
-  padding: 20px;
-  position: relative;
+.front-merch-image {
+  max-width: 100%;
 }
 
-.front-panel-white {
-  background-color: white;
-  margin: 0;
-  padding: 20px;
-  position: relative;
-}
 
 .front-wrapper {
   padding: 10px;
