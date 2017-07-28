@@ -32,8 +32,11 @@ function twentyseventeen_child_LAW_scripts () {
 	// load Font Awesome css
 	wp_enqueue_style( 'font-awesome', get_theme_file_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
 
-	// load _tk styles
-	wp_enqueue_style( 'style', get_stylesheet_uri() );
+  // load parent stylesheet
+  wp_enqueue_style('parent-theme', get_template_directory_uri() .'/style.css');
+
+	// load styleshet
+	wp_enqueue_style('child-theme', get_stylesheet_directory_uri() .'/style.css', array('parent-theme'));
 
 	// load bootstrap js
 	wp_enqueue_script('bootstrapjs', get_theme_file_uri() . '/includes/resources/bootstrap/js/bootstrap.min.js', array('jquery') );

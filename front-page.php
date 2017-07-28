@@ -15,6 +15,7 @@
 get_header(); ?>
 
 <div id="primary" class="container">
+<!-- About Panel -->
   <div class="front-panel-white">
     <?php
     	$mypages = get_pages( array( 'child_of' => $post->ID ) );
@@ -39,6 +40,7 @@ get_header(); ?>
     	<?php
     	}
     ?>
+<!-- Merch Panel -->
   </div>
 <div class="row">
   <h2><a href="<?php echo get_site_url(); ?>/shop">Merchandise</a></h2>
@@ -57,8 +59,46 @@ get_header(); ?>
         </div>
   <?php
   }
+  wp_reset_postdata();?>
+</div><!-- end -->
+<!-- Show Panel -->
+<div class="row">
+  <h2>Shows</h2>
+</div>
+    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+  <?php
+    $num = 1;
+    $showposts = get_posts( array(
+      'category_name' => 'Shows',
+      'posts_per_page' => 10,
+	     'offset' => 0,
+      'orderby' => 'date',
+      'order' => 'ASC'));
+    foreach( $showposts as $show ) {
+      setup_postdata( $show );
+
   ?>
-</div><!-- end front-panel -->
+    <div class="panel panel-default">
+      <div class="panel-heading" role="tab" id="heading<?php echo $num ?>">
+        <h4 class="panel-title">
+          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $num ?>" aria-expanded="true" aria-controls="collapse<?php echo $num ?>">
+            <?php echo $show->post_title?> | <?php echo get_post_meta($show->ID, 'show_location', true); ?>
+          </a>
+        </h4>
+      </div>
+      <div id="collapse<?php echo $num ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $num ?>">
+        <div class="panel-body">
+          <?php the_content(); ?>
+        </div>
+       </div>
+     </div>
+  <?php
+    $num++;
+    }
+    wp_reset_postdata();
+   ?>
+ </div>
+
 </div>
 
 <?php get_footer();
