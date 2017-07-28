@@ -16,7 +16,7 @@ get_header(); ?>
 
 <div id="primary" class="container">
 <!-- About Panel -->
-  <div class="front-panel-white">
+  <div class="panel">
     <?php
     	$mypages = get_pages( array( 'child_of' => $post->ID ) );
 
@@ -42,7 +42,7 @@ get_header(); ?>
     ?>
 <!-- Merch Panel -->
   </div>
-<div class="row">
+<div class="row panel">
   <h2><a href="<?php echo get_site_url(); ?>/shop">Merchandise</a></h2>
 </div>
 <div class="row">
@@ -62,11 +62,13 @@ get_header(); ?>
   wp_reset_postdata();?>
 </div><!-- end -->
 <!-- Show Panel -->
+<div class="row panel">
+  <div class="col-md-12">
+    <h2 class="shows-header">Upcoming Shows</h2>
+  </div>
+</div>
 <div class="row">
-  <h2>Shows</h2>
-</div>
-<div class="show-box">
-</div>
+  <div class="col-md-12">
   <?php
     $num = 1;
     $showposts = get_posts( array(
@@ -79,26 +81,28 @@ get_header(); ?>
       setup_postdata( $show );
 
   ?>
-    <div class="panel panel-default">
-      <div class="panel-heading" role="tab" id="heading<?php echo $num ?>">
-        <h4 class="panel-title">
-          <a role="button" data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $num ?>" aria-expanded="true" aria-controls="collapse<?php echo $num ?>">
-            <?php echo $show->post_title?> | <?php echo get_post_meta($show->ID, 'show_location', true); ?>
+    <div class="row">
+      <div class="col-md-12 show-box">
+          <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $num ?>" aria-expanded="true" aria-controls="collapse<?php echo $num ?>">
+            <div class="row">
+              <div class="col-md-4 show-title"><?php echo $show->post_title?></div>
+              <div class="col-md-8 show-location"><?php echo get_post_meta($show->ID, 'show_location', true); ?></div>
+            </div>
           </a>
-        </h4>
-      </div>
       <div id="collapse<?php echo $num ?>" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading<?php echo $num ?>">
         <div class="panel-body">
           <?php the_content(); ?>
         </div>
        </div>
      </div>
+     </div>
   <?php
     $num++;
     }
     wp_reset_postdata();
    ?>
-
+ </div>
+</div>
 </div>
 
 <?php get_footer();
