@@ -64,7 +64,7 @@ get_header(); ?>
 <!-- Show Panel -->
 <div class="row panel">
   <div class="col-md-12">
-    <h2 class="shows-header">Upcoming Shows</h2>
+    <h2 class="shows-header"><a href="<?php echo get_site_url(); ?>/shows">Upcoming Shows</a></h2>
   </div>
 </div>
 <div class="row">

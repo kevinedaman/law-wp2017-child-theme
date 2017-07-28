@@ -36,12 +36,16 @@ img {
   background-color: white;
 }
 
+.site-branding-text {
+  color: darkgrey;
+}
+
 .site-content {
 	padding: 20px;
 }
 
 .site-footer {
-  background-color: black;
+  background-color: darkgrey;
   color: white;
   width: 100%;
 }
