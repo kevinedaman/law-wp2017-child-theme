@@ -8,7 +8,6 @@ template: twentyseventeen
 Vaersion: 0.1.0
 */
 
-@import "../twentyseventeen/style.css"
 /*
 * Contents:
 * 1.0 General
@@ -84,4 +83,11 @@ font-size: 16px;
 
 .panel-header {
   text-align: right;
+}
+
+.show-box {
+  border: solid 1px;
+  width: 500px;
+  height: 100px;
+  background-color: pink;
 }

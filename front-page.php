@@ -65,7 +65,8 @@ get_header(); ?>
 <div class="row">
   <h2>Shows</h2>
 </div>
-    <div class="panel-group" id="accordion" role="tablist" aria-multiselectable="true">
+<div class="show-box">
+</div>
   <?php
     $num = 1;
     $showposts = get_posts( array(
@@ -97,7 +98,6 @@ get_header(); ?>
     }
     wp_reset_postdata();
    ?>
- </div>
 
 </div>
 
