@@ -9,11 +9,13 @@
  */
 
 ?>
+
 <nav class="navbar navbar-inverse" role="navigation" aria-label="<?php esc_attr_e( 'Top Menu', 'twentyseventeen' ); ?>">
 
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
+		'menu_class' => 'nav-item'
 	) ); ?>
 
 	<?php if ( ( twentyseventeen_is_frontpage() || ( is_home() && is_front_page() ) ) && has_custom_header() ) : ?>

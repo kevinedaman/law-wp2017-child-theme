@@ -30,7 +30,7 @@
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
-					<?php get_template_part( 'template-parts/navigation/navigation', 'top' ); ?>
+					<?php get_template_part( 'navigation/navigation', 'top' ); ?>
 		<?php endif; ?>
 	</header><!-- #masthead -->
   <div class="site-content-contain">
