@@ -6,7 +6,7 @@ This project is a child theme of the TwentySeventeen theme supplied with the Wor
 
 ## Requirements
 
- - TwentySeveneen Wordpress Theme
+ - TwentySeventeen Wordpress Theme
  - Wordpress 4.7 or higher.
 
 ## Installation
@@ -35,3 +35,4 @@ Shows are posts with the category name of "Shows".  They also need two custom fi
 * Lynda.com course on child theme development
 * Wordpress codex
 * Stack Overflow
+* Lenny Alanis 
