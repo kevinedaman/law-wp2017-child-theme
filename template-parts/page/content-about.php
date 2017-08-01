@@ -11,31 +11,31 @@
  */
 
 ?>
-<div class="row">
 <header class="about-header">
   <?php the_title( '<h1>', '</h1>' ); ?>
   <?php twentyseventeen_edit_link( get_the_ID() ); ?>
 </header><!-- .entry-header -->
 
-<div class="about-image col-sm-6">
-  <?php echo get_the_post_thumbnail( get_queried_object_id(), 'twentyseventeen-featured-image' );?>
-</div><!-- .single-featured-image-header -->
+<div class="row">
+  <div class="about-image col-sm-6">
+    <?php echo get_the_post_thumbnail( get_queried_object_id(), 'twentyseventeen-featured-image' );?>
+  </div><!-- .single-featured-image-header -->
 
-<div class="col-sm-6">
-<article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+  <div class="col-sm-6">
+  <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-  <div class="about-content">
+    <div class="about-content">
 
-    <?php
-      the_content();
+      <?php
+        the_content();
 
-      wp_link_pages( array(
-        'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
-        'after'  => '</div>',
-      ) );
-    ?>
+        wp_link_pages( array(
+          'before' => '<div class="page-links">' . __( 'Pages:', 'twentyseventeen' ),
+          'after'  => '</div>',
+        ) );
+      ?>
 
-  </div><!-- .entry-content -->
-</div>
-</article><!-- #post-## -->
+    </div><!-- .entry-content -->
+  </div>
+  </article><!-- #post-## -->
 </div>
