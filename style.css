@@ -15,6 +15,10 @@ Vaersion: 0.1.0
 * 3.0 Front
 */
 
+a {
+  color: black !important;
+}
+
 h2 {
   color: black;
 }
@@ -142,3 +146,10 @@ font-size: 16px;
 /**
 * Nav
 */
+.menu-item .menu-item-type-post_type .menu-item-object-page {
+  background-color: pink;
+}
+
+.menu {
+  background-color: teal;
+}
