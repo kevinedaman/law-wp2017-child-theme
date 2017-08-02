@@ -153,13 +153,14 @@ font-size: 16px;
 .shows-header {
   text-align: center;
   color: black;
+  padding-bottom: 30px;
 }
 
 /**
 * Nav
 */
 .menu a {
-  color: aqua !important;
+  color: Magenta  !important;
 }
 
 .site-title a {
