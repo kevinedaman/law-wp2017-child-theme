@@ -166,3 +166,9 @@ font-size: 16px;
 .site-title a {
   color: LightCyan  !important;
 }
+
+.social-nav {
+	font-size: 16px;
+	font-size: 1rem;
+	margin-bottom: 0em;
+}
