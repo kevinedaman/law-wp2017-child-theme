@@ -19,11 +19,11 @@
   				<?php
   				get_template_part( 'template-parts/footer/footer', 'widgets' );
 
-  				if ( has_nav_menu( 'social' ) ) : ?>
+  				if ( has_nav_menu( 'socialfooter' ) ) : ?>
   					<nav class="social-navigation" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
   						<?php
   							wp_nav_menu( array(
-  								'theme_location' => 'social',
+  								'theme_location' => 'socialfooter',
   								'menu_class'     => 'social-links-menu',
   								'depth'          => 1,
   								'link_before'    => '<span class="screen-reader-text">',

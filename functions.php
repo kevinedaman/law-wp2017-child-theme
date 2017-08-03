@@ -14,6 +14,73 @@
  */
 
 /**
+ * These are the features that the original theme didn't set up
+ */
+function twentyseventeen_child_LAW_setup (){
+  //translation and stuff
+  load_theme_textdomain( 'twentyseventeen' );
+
+  // This theme uses wp_nav_menu() in two locations.
+  register_nav_menus( array(
+    'top'    => __( 'Top Menu', 'twentyseventeen' ),
+    'social' => __( 'Social Links Menu', 'twentyseventeen' ),
+    'socialfooter' => __( 'footer Social Links Menu', 'twentyseventeen' )
+  ) );
+
+//   $starter_content = array(
+//   // Set up nav menus for each of the two areas registered in the theme.
+//   'nav_menus' => array(
+//     // Assign a menu to the "top" location.
+//     'top' => array(
+//       'name' => __( 'Top Menu', 'twentyseventeen' ),
+//       'items' => array(
+//         'link_home', // Note that the core "home" page is actually a link in case a static front page is not used.
+//         'page_about',
+//         'page_blog',
+//         'page_contact',
+//       ),
+//     ),
+//
+//     // Assign a menu to the "social" location.
+//     'social' => array(
+//       'name' => __( 'Social Links Menu', 'twentyseventeen' ),
+//       'items' => array(
+//         'link_yelp',
+//         'link_facebook',
+//         'link_twitter',
+//         'link_instagram',
+//         'link_email',
+//       ),
+//     ),
+//
+//     // Assign a menu to the "top-social" location
+//     'socially' => array(
+//       'name' => __( 'Top Social', 'twentyseventeen' ),
+//       'items' => array(
+//         'link_yelp',
+//         'link_facebook',
+//         'link_twitter',
+//         'link_instagram',
+//         'link_email',
+//       ),
+//     ),
+//   ),
+// );
+//
+//     /**
+//      * Filters Twenty Seventeen Child array of starter content.
+//      *
+//      * @since Twenty Seventeen 1.1
+//      *
+//      * @param array $starter_content Array of starter content.
+//      */
+//     $starter_content = apply_filters( 'twentyseventeen_child_starter_content', $starter_content );
+//   add_theme_support( 'starter-content', $starter_content );
+}
+
+add_action( 'after_setup_theme', 'twentyseventeen_child_LAW_setup' );
+
+/**
  * Scripts and styles needed for the child theme
  */
 
@@ -48,13 +115,20 @@ function twentyseventeen_child_LAW_scripts () {
 	// load bootstrap wp js
 	wp_enqueue_script( 'bootstrapwp', get_theme_file_uri() . '/includes/js/bootstrap-wp.js', array('jquery2') );
 
-  if ( has_nav_menu( 'top' ) ) {
-    wp_enqueue_script( 'twentyseventeen-navigation', get_template_directory_uri() . '/assets/js/navigation.js' , array( 'jquery2' ), '1.0', true );
-    $twentyseventeen_l10n['expand']         = __( 'Expand child menu', 'twentyseventeen' );
-    $twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
-    $twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
-  }
-
+//   wp_enqueue_script( 'global', get_theme_file_uri() . '/includes/js/global.js', array('jquery2'), true);
+//
+//   $twentyseventeen_l10n = array(
+//     'quote'          => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
+//   );
+//
+//   if ( has_nav_menu( 'top' ) ) {
+//     wp_enqueue_script( 'navigation', get_theme_file_uri() . '/includes/js/navigation.js' , array( 'jquery2' ), '1.0', true );
+//     $twentyseventeen_l10n['expand']         = __( 'Expand child menu', 'twentyseventeen' );
+//     $twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
+//     $twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
+//   }
+//
+// wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $twentyseventeen_l10n );
 
 }
 

@@ -16,21 +16,6 @@ get_header(); ?>
 
 <div id="primary" class="container">
   <div class="">
-    <?php
-    if ( has_nav_menu( 'social' ) ) : ?>
-      <nav class="social-nav" role="navigation" aria-label="<?php esc_attr_e( 'Footer Social Links Menu', 'twentyseventeen' ); ?>">
-        <?php
-          wp_nav_menu( array(
-            'theme_location' => 'social',
-            'menu_class'     => 'row align-items-center',
-            'depth'          => 1,
-            'link_before'    => '<div class="col-sm"><span class="screen-reader-text">',
-            'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) . '</div>' ),
-          ) );
-        ?>
-      </nav><!-- .social-navigation -->
-    <?php endif;
-    ?>
   </div>
 <!-- About Panel -->
   <div class="panel">
@@ -45,8 +30,25 @@ get_header(); ?>
     		$content = apply_filters( 'the_content', $content );
     	?>
       <!-- page header and content -->
-      <div class="panel-header panel-right">
-        <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
+      <div class="panel-header row">
+        <div class="col">
+        <?php
+        if ( has_nav_menu( 'social' ) ) : ?>
+            <?php
+              wp_nav_menu( array(
+                'theme_location' => 'social',
+                'menu_class'     => 'row align-items-center',
+                'depth'          => 1,
+                'link_before'    => '<div class="col-sm"><span class="screen-reader-text">',
+                'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) . '</div>' ),
+              ) );
+            ?>
+        <?php endif;
+        ?>
+        </div>
+        <div class="col panel-right">
+          <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
+        </div>
       </div>
         <div class="row align-items-center panel-content">
         <div class="col-md-6">

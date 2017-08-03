@@ -160,26 +160,26 @@ font-size: 16px;
 * Nav
 */
 .menu a {
-  color: Magenta  !important;
+  color: Black  !important;
 }
 
 .site-title a {
   color: LightCyan  !important;
 }
 
-/* Social nav */
+/* Social Menu */
 
-.social-navigation {
-	font-size: 16px;
-	font-size: 1rem;
-	margin-bottom: 1em;
+.menu-social-container {
+  display: flex;
+  justify-content: start;
 }
 
-.social-navigation ul {
-	list-style: none;
+.menu-social-container ul {
+	list-style: none !important;
 	margin-bottom: 0;
 	margin-left: 0;
 }
+
 
 .social-navigation li {
 	display: inline;
@@ -203,8 +203,19 @@ font-size: 16px;
 }
 
 .social-navigation .icon {
-	height: 16px;
+	height: 3em;
 	top: 12px;
-	width: 16px;
+	width: 3em;
 	vertical-align: top;
+}
+
+
+.icon {
+	display: inline-block;
+	fill: black;
+	height: 3em;
+	position: relative; /* Align more nicely with capital letters */
+	top: -0.0625em;
+	vertical-align: middle;
+	width: 3em;
 }

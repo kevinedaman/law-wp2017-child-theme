@@ -23,14 +23,18 @@
 </head>
 
 <body <?php body_class(); ?>>
-<div id="page">
+<div id="page" class="site">
 	<a class="skip-link screen-reader-text" href="#content"><?php _e( 'Skip to content', 'twentyseventeen' ); ?></a>
-	<header id="masthead" role="banner">
+	<header id="masthead" class="site-header" role="banner">
 
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
 
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
+			<div class="navigation-top">
+				<div class="wrap">
 					<?php get_template_part( 'navigation/navigation', 'top' ); ?>
+				</div>
+			</div>
 		<?php endif; ?>
 	</header><!-- #masthead -->
   <div class="site-content-contain">
