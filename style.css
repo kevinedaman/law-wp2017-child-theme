@@ -219,3 +219,17 @@ font-size: 16px;
 	vertical-align: middle;
 	width: 3em;
 }
+
+#social-list ul {
+  list-style: none;
+}
+
+#social-list li {
+  display: inline;
+}
+
+#social-list img {
+  height: 3em;
+  width: 3em;
+  margin-left: 3em;
+}

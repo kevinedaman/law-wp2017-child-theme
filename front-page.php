@@ -30,17 +30,16 @@ get_header(); ?>
     		$content = apply_filters( 'the_content', $content );
     	?>
       <!-- page header and content -->
-      <div class="panel-header row">
-        <div class="col">
-        <?php
-        $social_posts = get_posts( array( 'category_name' => 'social') );
-        foreach ($socal_posts as $social) {
-          setup_postdata( $social );
-          
-          the_content();
-        }
-
+      <div class="panel-header row align-items-start">
+        <!-- <?php
+        $post   = get_post( 305 );
+        $output =  apply_filters( 'the_content', $post->post_content );
         ?>
+        <div id="social-list" class="col">
+          <?php
+          echo $output
+          ?>
+        </div> -->
         </div>
         <div class="col panel-right">
           <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
@@ -99,8 +98,8 @@ get_header(); ?>
             'order' => 'ASC'));
           foreach( $showposts as $show ) {
             setup_postdata( $show );
-
         ?>
+
           <div class="row">
             <div class="col-md-12 show-box">
                 <a data-toggle="collapse" data-parent="#accordion" href="#collapse<?php echo $num ?>" aria-expanded="true" aria-controls="collapse<?php echo $num ?>">
