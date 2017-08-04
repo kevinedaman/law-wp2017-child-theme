@@ -33,17 +33,13 @@ get_header(); ?>
       <div class="panel-header row">
         <div class="col">
         <?php
-        if ( has_nav_menu( 'social' ) ) : ?>
-            <?php
-              wp_nav_menu( array(
-                'theme_location' => 'social',
-                'menu_class'     => 'row align-items-center',
-                'depth'          => 1,
-                'link_before'    => '<div class="col-sm"><span class="screen-reader-text">',
-                'link_after'     => '</span>' . twentyseventeen_get_svg( array( 'icon' => 'chain' ) . '</div>' ),
-              ) );
-            ?>
-        <?php endif;
+        $social_posts = get_posts( array( 'category_name' => 'social') );
+        foreach ($socal_posts as $social) {
+          setup_postdata( $social );
+          
+          the_content();
+        }
+
         ?>
         </div>
         <div class="col panel-right">
