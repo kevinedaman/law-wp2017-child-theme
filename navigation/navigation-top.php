@@ -18,23 +18,10 @@
 		_e( 'Menu', 'twentyseventeen' );
 		?>
 	</button>
-<div class="row">
-	<div class="col">
 	<?php wp_nav_menu( array(
 		'theme_location' => 'top',
 		'menu_id'        => 'top-menu',
 	) ); ?>
-</div>
-	<?php
-	$post   = get_post( 305 );
-	$output =  apply_filters( 'the_content', $post->post_content );
-	?>
-	<div id="social-list" class="col">
-		<?php
-		echo $output
-		?>
-	</div>
-</div>
 
 
 </nav><!-- #site-navigation -->

@@ -19,29 +19,29 @@ get_header(); ?>
   </div>
 <!-- About Panel -->
   <div class="panel">
-    <?php
-      //get's pages that are children of the home page
-    	$mypages = get_pages( array( 'child_of' => $post->ID ) );
-
-    	foreach( $mypages as $page ) {
-    		$content = $page->post_content;
-    		if ( ! $content ) // Check for empty page
-    			continue;
-    		$content = apply_filters( 'the_content', $content );
-    	?>
       <!-- page header and content -->
-      <div class="panel-header row align-items-start">
-        <!-- <?php
-        $post   = get_post( 305 );
-        $output =  apply_filters( 'the_content', $post->post_content );
-        ?>
-        <div id="social-list" class="col">
+      <div class="panel-header row align-items-center">
+        <div id="social-list" class="col-md-8">
           <?php
-          echo $output
-          ?>
-        </div> -->
+            $socialPosts = get_posts( array( 'category_name' => 'social'));
+            foreach  ( $socialPosts as $social ) {
+              setup_postdata( $social );
+              the_content();
+            }
+            wp_reset_postdata();
+           ?>
         </div>
-        <div class="col panel-right">
+        <div class="col-md-4 panel-right">
+          <?php
+            $mypages = get_pages( array( 'child_of' => $post->ID ) );
+            //get's pages that are children of the home page
+            foreach( $mypages as $page ) {
+              $content = $page->post_content;
+                if ( ! $content ) // Check for empty page
+                  continue;
+                $content = apply_filters( 'the_content', $content );
+          ?>
+
           <h2><a href="<?php echo get_page_link( $page->ID ); ?>"><?php echo $page->post_title; ?></a></h2>
         </div>
       </div>
