@@ -3,6 +3,8 @@
  * Theme functions file.
  *
  * Contains handlers for navigation and widget area.
+ *
+ * Error thrown when asking for screenreadertext
  */
 
 (function( $ ) {

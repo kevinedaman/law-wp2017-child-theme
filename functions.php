@@ -37,8 +37,9 @@ add_action( 'after_setup_theme', 'twentyseventeen_child_LAW_setup' );
 
 function twentyseventeen_child_LAW_scripts () {
 
-  // load parent stylesheet
-  wp_enqueue_style('parent-theme', get_template_directory_uri() .'/style.css');
+  $parent_style = 'parent-style'; // This is 'twentyfifteen-style' for the Twenty Fifteen theme.
+
+  wp_enqueue_style( $parent_style, get_template_directory_uri() . '/style.css' );
 
 
 	// Import the necessary Bootstrap WP CSS additions
@@ -55,7 +56,11 @@ function twentyseventeen_child_LAW_scripts () {
 	wp_enqueue_style( 'font-awesome', get_theme_file_uri() . '/includes/css/font-awesome.min.css', false, '4.1.0' );
 
 	// load styleshet
-	wp_enqueue_style('child-theme', get_stylesheet_directory_uri() . '/style.css', array(), rand(111,9999));
+  wp_enqueue_style( 'child-style',
+      get_stylesheet_directory_uri() . '/style.css',
+      array( $parent_style ),
+      wp_get_theme()->get('Version')
+  );
 
   wp_deregister_script( 'jquery' );
 
@@ -65,21 +70,6 @@ function twentyseventeen_child_LAW_scripts () {
 
 	// load bootstrap wp js
 	wp_enqueue_script( 'bootstrapwp', get_theme_file_uri() . '/includes/js/bootstrap-wp.js', array('jquery2') );
-
-  wp_enqueue_script( 'global', get_theme_file_uri() . '/includes/js/global.js', array('jquery2'), true);
-
-  $twentyseventeen_l10n = array(
-    'quote'          => twentyseventeen_get_svg( array( 'icon' => 'quote-right' ) ),
-  );
-
-  if ( has_nav_menu( 'top' ) ) {
-    wp_enqueue_script( 'navigation', get_theme_file_uri() . '/includes/js/navigation.js' , array( 'jquery2' ), '1.0', true );
-    $twentyseventeen_l10n['expand']         = __( 'Expand child menu', 'twentyseventeen' );
-    $twentyseventeen_l10n['collapse']       = __( 'Collapse child menu', 'twentyseventeen' );
-    $twentyseventeen_l10n['icon']           = twentyseventeen_get_svg( array( 'icon' => 'angle-down', 'fallback' => true ) );
-  }
-
-wp_localize_script( 'twentyseventeen-skip-link-focus-fix', 'twentyseventeenScreenReaderText', $twentyseventeen_l10n );
 
 }
 
