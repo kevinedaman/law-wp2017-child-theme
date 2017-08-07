@@ -67,6 +67,9 @@ function twentyseventeen_child_LAW_scripts () {
 	// load bootstrap wp js
 	wp_enqueue_script( 'bootstrapwp', get_theme_file_uri() . '/includes/js/bootstrap-wp.js', array('jquery2') );
 
+  // get's navbar to toggle cuz things don't work as they should otherwise
+  wp_enqueue_script( 'navtoggle', get_theme_file_uri() . '/includes/js/navtoggle.js', array('jquery2'), true);
+
 }
 
 add_action( 'wp_enqueue_scripts', 'twentyseventeen_child_LAW_scripts' );

@@ -28,7 +28,6 @@
 	<header id="masthead" class="site-header" role="banner">
 
 		<?php get_template_part( 'template-parts/header/header', 'image' ); ?>
-
 		<?php if ( has_nav_menu( 'top' ) ) : ?>
 			<div class="navigation-top">
 				<div class="wrap">
@@ -36,6 +35,7 @@
 				</div>
 			</div>
 		<?php endif; ?>
+
 	</header><!-- #masthead -->
   <div class="site-content-contain">
 		<div id="content" class="site-content">

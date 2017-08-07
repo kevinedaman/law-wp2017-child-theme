@@ -18,10 +18,9 @@ get_header(); ?>
   <div class="">
   </div>
 <!-- About Panel -->
-  <div class="panel">
       <!-- page header and content -->
-      <div class="panel-header row align-items-center">
-        <div id="social-list" class="col-md-8">
+      <div class="row">
+        <div id="social-list">
           <?php
             $socialPosts = get_posts( array( 'category_name' => 'social'));
             foreach  ( $socialPosts as $social ) {
@@ -31,7 +30,10 @@ get_header(); ?>
             wp_reset_postdata();
            ?>
         </div>
-        <div class="col-md-4 panel-right">
+      </div>
+    <div class="panel-top">
+      <div class="row panel-header">
+        <div class="col panel-right">
           <?php
             $mypages = get_pages( array( 'child_of' => $post->ID ) );
             //get's pages that are children of the home page

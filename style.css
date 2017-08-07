@@ -93,6 +93,10 @@ font-size: 16px;
   padding-top: 100px;
 }
 
+.panel-top {
+  padding-top: 30px;
+}
+
 .panel-header {
   padding-bottom: 30px;
 }
@@ -231,5 +235,6 @@ font-size: 16px;
 #social-list img {
   height: 3em;
   width: 3em;
-  margin-left: 3em;
+  margin-left: 2em;
+  margin-top: 1em;
 }
